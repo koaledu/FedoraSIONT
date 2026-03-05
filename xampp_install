@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Script de instalación automática de XAMPP en Fedora Server
+
+set -e
+
+XAMPP_URL="https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/8.2.12/xampp-linux-x64-8.2.12-0-installer.run/download"
+INSTALLER="xampp-linux-x64-8.2.12-0-installer.run"
+
+echo "-------------------------------------"
+echo "Actualizando sistema..."
+echo "-------------------------------------"
+sudo dnf update -y
+
+echo "-------------------------------------"
+echo "Instalando dependencias necesarias..."
+echo "-------------------------------------"
+sudo dnf install -y libnsl mod_perl libaio libxcrypt-compat wget
+
+echo "-------------------------------------"
+echo "Descargando XAMPP..."
+echo "-------------------------------------"
+wget -O $INSTALLER "$XAMPP_URL"
+
+echo "-------------------------------------"
+echo "Asignando permisos de ejecución..."
+echo "-------------------------------------"
+chmod u+x $INSTALLER
+
+echo "-------------------------------------"
+echo "Iniciando instalador de XAMPP..."
+echo "-------------------------------------"
+sudo ./$INSTALLER
+
+echo "-------------------------------------"
+echo "Instalación completada."
+echo "Para iniciar XAMPP usa:"
+echo "sudo /opt/lampp/lampp start"
+echo "-------------------------------------"
