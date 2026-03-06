@@ -3,19 +3,25 @@ Scripts de instalación para el servidor del semillero de investigación SIONT e
 
 ## Instalación
 
-1.  Clonar el repositorio.
+1.  Instalar Git.
+
+    ```bash
+    sudo dnf install git -y
+    ```
+
+2.  Clonar el repositorio.
 
     ```bash
     git clone https://github.com/koaledu/FedoraSIONT.git
     ```
 
-2.  Navegar al directorio del proyecto.
+3.  Navegar al directorio del proyecto.
 
     ```bash
     cd FedoraSIONT/
     ```
 
-3.  Ejecutar el script de instalación.
+4.  Ejecutar el script de instalación.
 
     ```bash
     bash ./xampp_install
