@@ -11,7 +11,7 @@ El servidor físico utiliza **Bluefin** (Fedora 44), un sistema inmutable
 diseñado para ejecutar servicios aislados. Esta política nos permite:
 - **Mantener el sistema limpio:** No instalamos paquetes en el sistema *host*.
 - **Garantizar resiliencia:** Infraestructura como código, reconstruible ante
-fallos de hardware.
+fallos de *hardware*.
 
 ## Estado
 Estamos transicionando los servicios a contenedores. Este repositorio almacenará
