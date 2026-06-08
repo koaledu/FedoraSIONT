@@ -1,28 +1,21 @@
 # FedoraSIONT
-Scripts de instalación para el servidor del semillero de investigación SIONT en la UDI.
 
-## Instalación
+Repositorio de infraestructura para el semillero de investigación SIONT (UDI).
 
-1.  Instalar Git.
+## Migración a Contenedores
+Tras un fallo de *hardware* en el equipo original, hemos migrado de una
+instalación monolítica (XAMPP) a una arquitectura basada en **contenedores**
+(Podman/Docker).
 
-    ```bash
-    sudo dnf install git -y
-    ```
+El servidor físico utiliza **Bluefin** (Fedora 44), un sistema inmutable
+diseñado para ejecutar servicios aislados. Esta política nos permite:
+- **Mantener el sistema limpio:** No instalamos paquetes en el sistema *host*.
+- **Garantizar resiliencia:** Infraestructura como código, reconstruible ante
+fallos de hardware.
 
-2.  Clonar el repositorio.
+## Estado
+Estamos transicionando los servicios a contenedores. Este repositorio almacenará
+únicamente las configuraciones necesarias para su despliegue.
 
-    ```bash
-    git clone https://github.com/koaledu/FedoraSIONT.git
-    ```
-
-3.  Navegar al directorio del proyecto.
-
-    ```bash
-    cd FedoraSIONT/
-    ```
-
-4.  Ejecutar el script de instalación.
-
-    ```bash
-    bash ./xampp_install
-    ```
+Actualmente, la utilidad a largo plazo de este repositorio es incierta, ya que
+las configuraciones necesarias en el servidor son, de momento, nulas.
